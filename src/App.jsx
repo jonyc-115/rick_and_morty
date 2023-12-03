@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import FormSearch from "./components/FormSearch";
+import ListCharacters from "./components/ListCharacters";
 
 function App() {
   const [db, setDb] = useState([]);
@@ -24,7 +26,7 @@ function App() {
 
   const info = db.info;
   const results = db.results;
-  console.log(info);
+  console.log(results);
 
   return (
     <>
@@ -32,31 +34,9 @@ function App() {
         Rick App Morty
       </h1>
 
-      <form className="flex max-w-xs flex-col m-auto gap-4 px-4">
-        <input
-          className="p-2 rounded-xl bg-[#EDEDF5] border-[1px] border-[#B4C5B5] outline-none"
-          type="text"
-          placeholder="Rick, Morty, Beth..."
-        />
-        <input
-          className="bg-[#1B2899] w-[5rem] text-white rounded-lg py-1 font-semibold"
-          type="submit"
-          value="Go"
-        />
-      </form>
+      <FormSearch />
 
-      <ul className="grid px-4 py-6 grid-cols-fluid gap-7 justify-items-center">
-        {results?.map((el) => (
-          <li className="text-center min-h-[15rem]" key={el.id}>
-            <h3 className="mb-2 min-h-[3rem] flex justify-center items-center">
-              {el.name} - {el.species}
-            </h3>
-            <div>
-              <img src={el.image} alt="" />
-            </div>
-          </li>
-        ))}
-      </ul>
+      <ListCharacters />
     </>
   );
 }
