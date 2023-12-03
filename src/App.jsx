@@ -34,9 +34,9 @@ function App() {
         Rick App Morty
       </h1>
 
-      <FormSearch />
+      <FormSearch setDb={setDb} />
 
-      <ListCharacters />
+      <ListCharacters results={results} />
     </>
   );
 }

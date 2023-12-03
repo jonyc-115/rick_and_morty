@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const FormSearch = () => {
+const FormSearch = ({ setDb }) => {
   const [search, setSearch] = useState("");
 
   const handleChange = (e) => {
@@ -13,7 +13,10 @@ const FormSearch = () => {
 
     fetch(`https://rickandmortyapi.com/api/character/?name=${search}`)
       .then((res) => (res.ok ? res.json() : Promise.reject()))
-      .then((json) => console.log(json))
+      .then((json) => {
+        setDb(json);
+        setSearch("");
+      })
       .catch((err) => console.log(err));
   };
 
