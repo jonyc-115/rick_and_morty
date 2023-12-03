@@ -9,7 +9,6 @@ const FormSearch = ({ setDb }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("submit");
 
     fetch(`https://rickandmortyapi.com/api/character/?name=${search}`)
       .then((res) => (res.ok ? res.json() : Promise.reject()))

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import "./App.css";
-import FormSearch from "./components/FormSearch";
-import ListCharacters from "./components/ListCharacters";
+import { Route, Routes } from "react-router-dom";
+import HomeScreen from "./pages/HomeScreen";
+import CharacterScreen from "./pages/CharacterScreen";
 
 function App() {
   const [db, setDb] = useState([]);
@@ -30,13 +30,13 @@ function App() {
 
   return (
     <>
-      <h1 className="text-[#4F4F65] text-3xl text-center py-8 font-black">
-        Rick App Morty
-      </h1>
-
-      <FormSearch setDb={setDb} />
-
-      <ListCharacters results={results} />
+      <Routes>
+        <Route
+          path="/"
+          element={<HomeScreen setDb={setDb} results={results} />}
+        />
+        <Route path="/character/:id" element={<CharacterScreen />} />
+      </Routes>
     </>
   );
 }
