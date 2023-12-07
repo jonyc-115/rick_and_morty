@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { fetchData } from "../helpers/fetchData";
 
 const FormSearch = ({ setDb }) => {
   const [search, setSearch] = useState("");
@@ -7,16 +8,15 @@ const FormSearch = ({ setDb }) => {
     setSearch(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    fetch(`https://rickandmortyapi.com/api/character/?name=${search}`)
-      .then((res) => (res.ok ? res.json() : Promise.reject()))
-      .then((json) => {
-        setDb(json);
-        setSearch("");
-      })
-      .catch((err) => console.log(err));
+    const data = await fetchData(
+      `https://rickandmortyapi.com/api/character/?name=${search}`
+    );
+
+    setDb(data);
+    setSearch("");
   };
 
   return (
