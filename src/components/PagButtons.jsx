@@ -31,12 +31,12 @@ const PagButtons = ({ setDb, db }) => {
   };
 
   return (
-    <div className="relative w-[90%] m-auto pt-8 pb-12">
+    <div className="relative w-[90%] pt-8 pb-12 m-auto max-w-[1180px] ">
       {prev && (
         <button
           id="prev"
           onClick={handleClick}
-          className="absolute left-0 font-semibold text-[#2f2f40] outline-none cursor-pointer bg-[#4f4f651e] p-2 rounded-md border-[1px] border-[#B4C5B5] shadow-md"
+          className="absolute left-8 font-semibold text-[#2f2f40] outline-none cursor-pointer bg-[#4f4f651e] p-2 rounded-md border-[1px] border-[#B4C5B5] shadow-md"
         >
           prev
         </button>
@@ -45,7 +45,7 @@ const PagButtons = ({ setDb, db }) => {
         <button
           id="next"
           onClick={handleClick}
-          className="absolute right-0 font-semibold text-[#2f2f40] cursor-pointer bg-[#4f4f651e] p-2 rounded-md border-[1px] border-[#B4C5B5] shadow-md"
+          className="absolute right-8 font-semibold text-[#2f2f40] cursor-pointer bg-[#4f4f651e] p-2 rounded-md border-[1px] border-[#B4C5B5] shadow-md"
         >
           next
         </button>

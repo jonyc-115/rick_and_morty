@@ -13,12 +13,12 @@ const CardChar = ({ character }) => {
 
   return (
     <Link to={`/character/${id}`}>
-      <li className="flex flex-col text-center min-h-[15rem] bg-[#43415F] rounded-xl overflow-hidden">
-        <div className="w-full">
+      <li className="flex max-w-[16rem] flex-col text-center min-h-[15rem] bg-[#43415F] rounded-xl overflow-hidden  tablet:min-h-[23rem] transition-all hover:shadow-cards hover:scale-105">
+        <div className="w-full ">
           <img src={image} alt="" />
         </div>
-        <div className="px-3 py-4 items-center flex-1 gap-2">
-          <h3 className=" text-white text-2xl font-black text-start ">
+        <div className="px-3 py-4 flex-1 items-center gap-2">
+          <h3 className=" text-white text-[1.3rem] font-black text-start leading-6 ">
             {name}
           </h3>
 

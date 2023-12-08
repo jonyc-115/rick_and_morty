@@ -1,7 +1,5 @@
 # Rick and Morty App
 
-![Rick and Morty Logo](link_to_logo_image.png)
-
 ## Descripción
 
 Esta aplicación utiliza la [API pública de Rick and Morty](https://rickandmortyapi.com/) para mostrar información sobre los personajes de la serie. Puedes explorar los primeros 20 personajes, paginar a través de ellos y realizar búsquedas específicas.
@@ -19,3 +17,4 @@ Esta aplicación utiliza la [API pública de Rick and Morty](https://rickandmort
 # Tecnologías ustilizada
 
 · React.js
+· Tailwindcss

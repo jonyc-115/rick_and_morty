@@ -15,6 +15,9 @@ const HomeScreen = ({ setDb, db }) => {
 
       <PagButtons setDb={setDb} db={db} />
       <ListCharacters db={db} />
+      <div className="pb-8">
+        <PagButtons setDb={setDb} db={db} />
+      </div>
     </>
   );
 };

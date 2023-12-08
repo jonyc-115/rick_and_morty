@@ -5,7 +5,7 @@ const ListCharacters = ({ db }) => {
   const results = db ? db.results : [];
 
   return (
-    <ul className="grid px-4 pt-4 grid-cols-fluid gap-7 justify-items-center">
+    <ul className="grid px-4 pt-4 grid-cols-fluid gap-7 justify-items-center  max-w-[1180px] m-auto">
       {results?.map((el) => {
         return <CardChar key={el.id} character={el} />;
       })}
