@@ -2,6 +2,8 @@ export const fetchData = async (url) => {
   try {
     const res = await fetch(url);
 
+    console.log(res);
+
     if (!res.ok)
       throw new Error(`Error en la solicitud: ${res.status} ${res.statusText}`);
 
@@ -9,6 +11,7 @@ export const fetchData = async (url) => {
 
     return json;
   } catch (err) {
-    throw new Error(`Error al procesar la solicitud: ${err.message}`);
+    console.log(err);
+    throw new Error(err.message);
   }
 };

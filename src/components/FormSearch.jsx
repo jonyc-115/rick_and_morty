@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { fetchData } from "../helpers/fetchData";
 
-const FormSearch = ({ setDb }) => {
+const FormSearch = ({ setDb, setLoading, setError }) => {
   const [search, setSearch] = useState("");
 
   const handleChange = (e) => {
@@ -9,14 +9,21 @@ const FormSearch = ({ setDb }) => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    try {
+      e.preventDefault();
+      setError(null);
+      setLoading(true);
+      const data = await fetchData(
+        `https://rickandmortyapi.com/api/character/?name=${search}`
+      );
 
-    const data = await fetchData(
-      `https://rickandmortyapi.com/api/character/?name=${search}`
-    );
-
-    setDb(data);
-    setSearch("");
+      setDb(data);
+    } catch (err) {
+      setError(search);
+    } finally {
+      setLoading(false);
+      setSearch("");
+    }
   };
 
   return (
