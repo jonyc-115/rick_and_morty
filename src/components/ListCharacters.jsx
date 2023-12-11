@@ -7,7 +7,7 @@ const ListCharacters = ({ db, loading }) => {
   console.log(results);
 
   return (
-    <ul className="grid px-4 pt-4 grid-cols-fluid gap-7 justify-items-center  max-w-[1180px] m-auto">
+    <ul className="grid px-4 pt-4 grid-cols-fluid gap-7 justify-items-center w-full max-w-[1180px] m-auto">
       {loading ? (
         <Loader />
       ) : (

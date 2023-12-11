@@ -30,7 +30,7 @@ const CharacterScreen = ({ loading, setLoading }) => {
     <main className="bg-[#43415f]">
       <div className="relative max-w-[1024px] m-auto  items-center justify-center ">
         <Link
-          className="absolute top-2 left-2 bg-[#43415f99] p-1 rounded-lg font-semibold text-[#efefef] tablet:top-[15%] tablet:left-[7rem] tablet:bg-[#ffffff24] shadow-md  hover:bg-[#ffffff72]"
+          className="absolute top-2 left-2 bg-[#43415f99] p-1 rounded-lg font-semibold text-[#efefef] tablet:top-[15%] tablet:left-[7rem] tablet:bg-[#2d2c3bd2] shadow-md  hover:bg-[#11121c93] tablet:hover:bg-[#6f718793]"
           to="/"
         >
           Go back

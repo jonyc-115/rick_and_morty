@@ -11,6 +11,7 @@ export default {
       },
       boxShadow: {
         cards: "0 0 1rem 0 #000",
+        buttons: "-0.1rem 0.1rem 0.3rem #3e3e3e",
       },
     },
   },
